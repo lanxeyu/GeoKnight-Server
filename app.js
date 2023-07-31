@@ -12,7 +12,8 @@ app.use(express.json());
 app.use(logger);
 
 const sortData = (data, property) => {
-    return data.sort(function(a,b){
+    let copy = [...data]
+    return copy.sort(function(a,b){
         return b[property] - a[property]
     })
 }
