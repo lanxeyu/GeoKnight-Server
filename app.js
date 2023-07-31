@@ -14,4 +14,11 @@ app.get('/scoreboard', (req,res) => {
     res.send(scoreboard);
 })
 
+app.get('/scoreboard/:id', (req,res) => {
+    const idx = req.params.id;
+    const score = idx - 1
+    res.send(scoreboard[score])
+})
+
+
 module.exports = app;
