@@ -54,6 +54,16 @@ app.get('/scoreboard/current-player', (req,res) => {
     res.send(scoreboard[id])
 })
 
+// updates the username of the last player
+app.patch('/scoreboard/current-player', (req,res) => {
+    const idx = scoreboard.length - 1;
+    const updateUsername = scoreboard[idx]
+
+    Object.assign(updateUsername, req.body)
+    fs.writeFileSync("scoreboard.json", JSON.stringify(scoreboard));
+
+    res.status(201).json(updateUsername)
+})
 
 
 
