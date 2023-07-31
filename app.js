@@ -20,5 +20,11 @@ app.get('/scoreboard/:id', (req,res) => {
     res.send(scoreboard[score])
 })
 
+app.post('/scoreboard', (req,res) => {
+    const newScore = req.body;
+    newScore["id"] = scoreboard.length + 1;
+    scoreboard.push(newScore);
+    res.send(newScore);
+})
 
 module.exports = app;
