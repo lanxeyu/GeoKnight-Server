@@ -48,4 +48,13 @@ app.patch('/scoreboard/:id', (req,res) => {
     res.json(updateScore)
 })
 
+// gets the score and username of the last player
+app.get('/scoreboard/current-player', (req,res) => {
+    const id = scoreboard.length - 1
+    res.send(scoreboard[id])
+})
+
+
+
+
 module.exports = app;
