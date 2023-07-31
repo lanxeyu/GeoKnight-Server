@@ -11,8 +11,16 @@ app.use(express.json());
 
 app.use(logger);
 
+const sortData = (data, property) => {
+    return data.sort(function(a,b){
+        return b[property] - a[property]
+    })
+}
+
 app.get('/scoreboard', (req,res) => {
-    res.send(scoreboard);
+    const sortedScoreboard = sortData(scoreboard, "score")
+    res.send(sortedScoreboard);  
+
 })
 
 app.get('/scoreboard/:id', (req,res) => {
@@ -25,10 +33,9 @@ app.post('/scoreboard', (req,res) => {
     const newScore = req.body;
     newScore["id"] = scoreboard.length + 1;
     scoreboard.push(newScore);
-    res.send(newScore);
+    res.send(newScore); 
 })
 
-// updates the score
 app.patch('/scoreboard/:id', (req,res) => {
     const idx = req.params.id;
     const score = idx - 1
