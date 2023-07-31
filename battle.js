@@ -1,10 +1,12 @@
 
 // Initialize difficulty scalers
-let battleCounter = 0;
-let enemyCount = 1;
+var battleCounter = 0;
+var enemyCount = 1;
+var enemyMaxHPMidpoint = 8;
+var enemyAttackMidpoint = 3;
 
 // Initialize score
-let score = 0;
+var score = 0;
 
 // Initialize player object
 const player = {
@@ -19,7 +21,7 @@ const player = {
 
 
 // Create empty array to store enemies
-let enemyArray = [];
+var enemyArray = [];
 
 
 // Class constructor for enemy objects
@@ -50,10 +52,11 @@ function createEnemy(maxHP, attack) {
 function adjustDifficulty() {
     enemyCount = 1 + Math.floor(battleCounter * 0.5);
     enemyMaxHPMidpoint = 4 + Math.floor(battleCounter * 1.7);
-    enemyAtkMidpoint = 2 + Math.floor(battleCounter * 1.4);
+    enemyAttackMidpoint = 2 + Math.floor(battleCounter * 1.4);
 }
 
 
+// For generating random enemy stats based on a range from the midpoint
 function getRandomInt(midpoint) {
     const min = midpoint - 2;
     const max = midpoint + 2;
@@ -61,6 +64,7 @@ function getRandomInt(midpoint) {
 }
 
 
+// Initialize battle phase
 function initBattlePhase() {
     adjustDifficulty();
     battleCounter += 1;
@@ -72,12 +76,13 @@ function initBattlePhase() {
 }
 
 
+// Damage calculations for attack action
 function resolveAttack(player, enemy) {
-    player.currHP -= enemyArray[0].atk
-    enemyArray[0].currHP -= player.atk
+    player.currHP -= enemy.attack
+    enemy.currHP -= player.attack
 
-    console.log(`GeoKnight dealt ${player.atk} damage to the enemy.`)
-    console.log(`Enemy dealt ${enemyArray[0].atk} damage to the GeoKnight.`)
+    console.log(`GeoKnight dealt ${player.attack} damage to the enemy.`)
+    console.log(`Enemy dealt ${enemy.attack} damage to the GeoKnight.`)
 }
 
 
@@ -90,7 +95,7 @@ function runBattlePhase() {
     // Event listener for the attack button
     document.getElementById("attack-btn").addEventListener("click", () => {
         // If attack button is pressed, do the following
-        resolveAttack();
+        resolveAttack(player, enemyArray[0]);
 
         if (checkZeroHP(player)) {
             player = null;
@@ -111,4 +116,5 @@ function runBattlePhase() {
 }
 
 
-module.exports = {battle}
+initBattlePhase();
+runBattlePhase();
