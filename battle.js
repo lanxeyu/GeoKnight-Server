@@ -1,8 +1,7 @@
 
 // Initialize difficulty scalers
 let battleCounter = 0;
-let enemyStatScaler = battleCounter * 1.1;
-let enemyCountScaler = battleCounter * 1.5;
+let enemyCount = 1;
 
 // Initialize score
 let score = 0;
@@ -49,37 +48,41 @@ function createEnemy(maxHP, attack) {
 
 // Increase number of enemies and enemy stats based on battleCounter 
 function adjustDifficulty() {
-    enemyStatScaler = battleCounter * 1.1;
-    enemyCountScaler = battleCounter * 1.5;
-    enemyMaxHPMidpoint = xxx;
-    enemyAtkMidpoint = xxx;
+    enemyCount = 1 + Math.floor(battleCounter * 0.5);
+    enemyMaxHPMidpoint = 4 + Math.floor(battleCounter * 1.7);
+    enemyAtkMidpoint = 2 + Math.floor(battleCounter * 1.4);
+}
+
+
+function getRandomInt(midpoint) {
+    const min = midpoint - 2;
+    const max = midpoint + 2;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 
 function initBattlePhase() {
     adjustDifficulty();
-    // Increment battleCounter, used to increase difficulty as more cycles occur
     battleCounter += 1;
-
-    // INSERT HERE: function to draw the battle phase screen
    
-    
     // Create enemies dynamically based on difficulty
+    for (let i = 0; i < enemyCount; i++) {
+        createEnemy(getRandomInt(enemyMaxHPMidpoint), getRandomInt(enemyAttackMidpoint))
+    }
 }
 
 
 function resolveAttack(player, enemy) {
     player.currHP -= enemyArray[0].atk
     enemyArray[0].currHP -= player.atk
+
+    console.log(`GeoKnight dealt ${player.atk} damage to the enemy.`)
+    console.log(`Enemy dealt ${enemyArray[0].atk} damage to the GeoKnight.`)
 }
 
 
 function checkZeroHP(object) {
-    if (object.currHP <= 0) {
-      return true;
-    } else {
-      return false;
-    }
+    return object.currHP <= 0;
 }
 
 
@@ -91,10 +94,11 @@ function runBattlePhase() {
 
         if (checkZeroHP(player)) {
             player = null;
-            // INSERT HERE: Go to "Losing/Score Display/Enter Your Name" screen
+            // INSERT HERE: Go to "Lose/Score Display/Enter Your Name" screen
 
 
         } else if (checkZeroHP(enemyArray[0])) {
+            console.log('Enemy has died!')
             // Remove enemy object from the enemyArray
             enemyArray.shift();
 
