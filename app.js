@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const logger = require('./logger');
+const fs = require('fs')
 
 const app = express();
 const scoreboard = require('./scoreboard');
@@ -25,6 +26,17 @@ app.post('/scoreboard', (req,res) => {
     newScore["id"] = scoreboard.length + 1;
     scoreboard.push(newScore);
     res.send(newScore);
+})
+
+app.patch('/scoreboard/:id', (req,res) => {
+    const idx = req.params.id;
+    const score = idx - 1
+    const updateScore = scoreboard[score]
+
+    Object.assign(updateScore, req.body)
+    fs.writeFileSync("scoreboard.json", JSON.stringify(scoreboard));
+
+    res.json(updateScore)
 })
 
 module.exports = app;
