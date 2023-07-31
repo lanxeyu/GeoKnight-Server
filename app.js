@@ -28,6 +28,7 @@ app.post('/scoreboard', (req,res) => {
     res.send(newScore);
 })
 
+// updates the score
 app.patch('/scoreboard/:id', (req,res) => {
     const idx = req.params.id;
     const score = idx - 1
