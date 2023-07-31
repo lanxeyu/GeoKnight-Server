@@ -1,0 +1,410 @@
+{
+    "questions": [
+      {
+        "question": "Which continent is known as the 'Land of the Rising Sun'?",
+        "choice1": "Asia",
+        "choice2": "Africa",
+        "choice3": "Europe",
+        "choice4": "South America",
+        "correctChoice": "Asia",
+        "difficulty": 1
+      },
+      {
+        "question": "What is the capital city of France?",
+        "choice1": "Berlin",
+        "choice2": "Madrid",
+        "choice3": "Paris",
+        "choice4": "Rome",
+        "correctChoice": "Paris",
+        "difficulty": 1
+      },
+      {
+        "question": "Which river is the longest in the world?",
+        "choice1": "Nile",
+        "choice2": "Amazon",
+        "choice3": "Yangtze",
+        "choice4": "Mississippi",
+        "correctChoice": "Nile",
+        "difficulty": 1
+      },
+      {
+        "question": "Mount Everest, the world's highest mountain, is located in which mountain range?",
+        "choice1": "Himalayas",
+        "choice2": "Andes",
+        "choice3": "Rockies",
+        "choice4": "Alps",
+        "correctChoice": "Himalayas",
+        "difficulty": 1
+      },
+      {
+        "question": "Which desert is the largest in the world?",
+        "choice1": "Sahara",
+        "choice2": "Gobi",
+        "choice3": "Arabian",
+        "choice4": "Atacama",
+        "correctChoice": "Sahara",
+        "difficulty": 1
+      },
+      {
+        "question": "In which country would you find the Great Barrier Reef, the world's largest coral reef system?",
+        "choice1": "Australia",
+        "choice2": "Brazil",
+        "choice3": "India",
+        "choice4": "Canada",
+        "correctChoice": "Australia",
+        "difficulty": 2
+      },
+      {
+        "question": "Which river runs through Egypt and is known for its historical significance?",
+        "choice1": "Nile",
+        "choice2": "Danube",
+        "choice3": "Thames",
+        "choice4": "Volga",
+        "correctChoice": "Nile",
+        "difficulty": 2
+      },
+      {
+        "question": "What is the largest country in South America by area?",
+        "choice1": "Argentina",
+        "choice2": "Peru",
+        "choice3": "Brazil",
+        "choice4": "Colombia",
+        "correctChoice": "Brazil",
+        "difficulty": 2
+      },
+      {
+        "question": "Which sea is located between Europe and Africa?",
+        "choice1": "Red Sea",
+        "choice2": "Mediterranean Sea",
+        "choice3": "Black Sea",
+        "choice4": "Caspian Sea",
+        "correctChoice": "Mediterranean Sea",
+        "difficulty": 2
+      },
+      {
+        "question": "The city of Tokyo is situated in which country?",
+        "choice1": "China",
+        "choice2": "Japan",
+        "choice3": "South Korea",
+        "choice4": "India",
+        "correctChoice": "Japan",
+        "difficulty": 2
+      },
+      {
+        "question": "What is the highest waterfall in the world?",
+        "choice1": "Angel Falls",
+        "choice2": "Niagara Falls",
+        "choice3": "Victoria Falls",
+        "choice4": "Iguazu Falls",
+        "correctChoice": "Angel Falls",
+        "difficulty": 2
+      },
+      {
+        "question": "Which of the following countries is an island nation in the Indian Ocean?",
+        "choice1": "Madagascar",
+        "choice2": "Chile",
+        "choice3": "Mongolia",
+        "choice4": "Sudan",
+        "correctChoice": "Madagascar",
+        "difficulty": 2
+      },
+      {
+        "question": "What is the name of the largest desert in North America?",
+        "choice1": "Sahara Desert",
+        "choice2": "Gobi Desert",
+        "choice3": "Mojave Desert",
+        "choice4": "Kalahari Desert",
+        "correctChoice": "Mojave Desert",
+        "difficulty": 3
+      },
+      {
+        "question": "Which city is the capital of Canada?",
+        "choice1": "Ottawa",
+        "choice2": "Vancouver",
+        "choice3": "Toronto",
+        "choice4": "Montreal",
+        "correctChoice": "Ottawa",
+        "difficulty": 3
+      },
+      {
+        "question": "What is the name of the sea that separates northeastern Africa from the Arabian Peninsula?",
+        "choice1": "Red Sea",
+        "choice2": "Black Sea",
+        "choice3": "Mediterranean Sea",
+        "choice4": "Persian Gulf",
+        "correctChoice": "Red Sea",
+        "difficulty": 3
+      },
+      {
+        "question": "In which country is the ancient city of Petra, known for its rock-cut architecture?",
+        "choice1": "Egypt",
+        "choice2": "Greece",
+        "choice3": "Jordan",
+        "choice4": "Lebanon",
+        "correctChoice": "Jordan",
+        "difficulty": 3
+      },
+      {
+        "question": "Which river flows through the Grand Canyon in the United States?",
+        "choice1": "Colorado River",
+        "choice2": "Mississippi River",
+        "choice3": "Missouri River",
+        "choice4": "Columbia River",
+        "correctChoice": "Colorado River",
+        "difficulty": 3
+      },
+      {
+        "question": "Which African country is known as the 'Land of a Thousand Hills'?",
+        "choice1": "Rwanda",
+        "choice2": "Kenya",
+        "choice3": "Nigeria",
+        "choice4": "South Africa",
+        "correctChoice": "Rwanda",
+        "difficulty": 3
+      },
+      {
+        "question": "Which country has the world's largest population?",
+        "choice1": "India",
+        "choice2": "United States",
+        "choice3": "Russia",
+        "choice4": "China",
+        "correctChoice": "China",
+        "difficulty": 3
+      },
+      {
+        "question": "Which European country is known for its tulip fields and windmills?",
+        "choice1": "Italy",
+        "choice2": "Germany",
+        "choice3": "Netherlands",
+        "choice4": "France",
+        "correctChoice": "Netherlands",
+        "difficulty": 3
+      },
+      {
+        "question": "What is the largest ocean on Earth?",
+        "choice1": "Indian Ocean",
+        "choice2": "Arctic Ocean",
+        "choice3": "Atlantic Ocean",
+        "choice4": "Pacific Ocean",
+        "correctChoice": "Pacific Ocean",
+        "difficulty": 3
+      },
+      {
+        "question": "Which mountain range stretches across seven countries in Southern Europe?",
+        "choice1": "Andes",
+        "choice2": "Himalayas",
+        "choice3": "Alps",
+        "choice4": "Rockies",
+        "correctChoice": "Alps",
+        "difficulty": 4
+      },
+      {
+        "question": "What is the capital city of Australia?",
+        "choice1": "Sydney",
+        "choice2": "Melbourne",
+        "choice3": "Canberra",
+        "choice4": "Brisbane",
+        "correctChoice": "Canberra",
+        "difficulty": 4
+      },
+      {
+        "question": "Which country is the second-largest by land area?",
+        "choice1": "Canada",
+        "choice2": "Russia",
+        "choice3": "United States",
+        "choice4": "China",
+        "correctChoice": "Canada",
+        "difficulty": 4
+      },
+      {
+        "question": "What is the deepest point in the Earth's oceans?",
+        "choice1": "Puerto Rico Trench",
+        "choice2": "Mariana Trench",
+        "choice3": "Java Trench",
+        "choice4": "Tonga Trench",
+        "correctChoice": "Mariana Trench",
+        "difficulty": 4
+      },
+      {
+        "question": "The ancient city of Machu Picchu is located in which country?",
+        "choice1": "Colombia",
+        "choice2": "Peru",
+        "choice3": "Ecuador",
+        "choice4": "Chile",
+        "correctChoice": "Peru",
+        "difficulty": 4
+      },
+      {
+        "question": "Which country is home to the famous Neuschwanstein Castle?",
+        "choice1": "France",
+        "choice2": "Austria",
+        "choice3": "Germany",
+        "choice4": "Italy",
+        "correctChoice": "Germany",
+        "difficulty": 4
+      },
+      {
+        "question": "What is the capital city of Brazil?",
+        "choice1": "Rio de Janeiro",
+        "choice2": "Brasília",
+        "choice3": "São Paulo",
+        "choice4": "Buenos Aires",
+        "correctChoice": "Brasília",
+        "difficulty": 4
+      },
+      {
+        "question": "Which strait separates Asia and North America?",
+        "choice1": "Bering Strait",
+        "choice2": "Strait of Gibraltar",
+        "choice3": "Strait of Hormuz",
+        "choice4": "Cook Strait",
+        "correctChoice": "Bering Strait",
+        "difficulty": 4
+      },
+      {
+        "question": "In which country would you find the famous Serengeti National Park?",
+        "choice1": "South Africa",
+        "choice2": "Kenya",
+        "choice3": "Tanzania",
+        "choice4": "Zimbabwe",
+        "correctChoice": "Tanzania",
+        "difficulty": 4
+      },
+      {
+        "question": "What is the capital city of South Korea?",
+        "choice1": "Beijing",
+        "choice2": "Shanghai",
+        "choice3": "Seoul",
+        "choice4": "Tokyo",
+        "correctChoice": "Seoul",
+        "difficulty": 4
+      },
+      {
+        "question": "Which country is known as the 'Land of Fire and Ice' due to its volcanic activity and glaciers?",
+        "choice1": "Iceland",
+        "choice2": "Greenland",
+        "choice3": "Norway",
+        "choice4": "Finland",
+        "correctChoice": "Iceland",
+        "difficulty": 4
+      },
+      {
+        "question": "Which river flows through the capital city of Russia?",
+        "choice1": "Volga River",
+        "choice2": "Dnieper River",
+        "choice3": "Moskva River",
+        "choice4": "Ob River",
+        "correctChoice": "Moskva River",
+        "difficulty": 4
+      },
+      {
+        "question": "What is the capital city of Egypt?",
+        "choice1": "Cairo",
+        "choice2": "Alexandria",
+        "choice3": "Giza",
+        "choice4": "Luxor",
+        "correctChoice": "Cairo",
+        "difficulty": 4
+      },
+      {
+        "question": "In which U.S. state would you find the Grand Canyon?",
+        "choice1": "Arizona",
+        "choice2": "California",
+        "choice3": "Nevada",
+        "choice4": "Colorado",
+        "correctChoice": "Arizona",
+        "difficulty": 4
+      },
+      {
+        "question": "Which country is known as the 'Land of the Rising Sun'?",
+        "choice1": "China",
+        "choice2": "Japan",
+        "choice3": "South Korea",
+        "choice4": "India",
+        "correctChoice": "Japan",
+        "difficulty": 5
+      },
+      {
+        "question": "What is the official language of Brazil?",
+        "choice1": "Portuguese",
+        "choice2": "Spanish",
+        "choice3": "English",
+        "choice4": "French",
+        "correctChoice": "Portuguese",
+        "difficulty": 5
+      },
+      {
+        "question": "Which country is known for its stunning fjords, polar bears, and Viking history?",
+        "choice1": "Sweden",
+        "choice2": "Norway",
+        "choice3": "Denmark",
+        "choice4": "Iceland",
+        "correctChoice": "Norway",
+        "difficulty": 5
+      },
+      {
+        "question": "Which river is the longest in Africa?",
+        "choice1": "Congo River",
+        "choice2": "Nile River",
+        "choice3": "Zambezi River",
+        "choice4": "Niger River",
+        "correctChoice": "Nile River",
+        "difficulty": 5
+      },
+      {
+        "question": "What is the capital city of Argentina?",
+        "choice1": "Buenos Aires",
+        "choice2": "Santiago",
+        "choice3": "Rio de Janeiro",
+        "choice4": "Lima",
+        "correctChoice": "Buenos Aires",
+        "difficulty": 5
+      },
+      {
+        "question": "Which African country is known as the 'Pearl of Africa'?",
+        "choice1": "Uganda",
+        "choice2": "Tanzania",
+        "choice3": "Ethiopia",
+        "choice4": "Kenya",
+        "correctChoice": "Uganda",
+        "difficulty": 5
+      },
+      {
+        "question": "The city of Marrakech, known for its vibrant markets and historical sites, is located in which country?",
+        "choice1": "Morocco",
+        "choice2": "Algeria",
+        "choice3": "Tunisia",
+        "choice4": "Libya",
+        "correctChoice": "Morocco",
+        "difficulty": 5
+      },
+      {
+        "question": "Which country is the largest in the world by land area?",
+        "choice1": "United States",
+        "choice2": "Russia",
+        "choice3": "Canada",
+        "choice4": "China",
+        "correctChoice": "Russia",
+        "difficulty": 5
+      },
+      {
+        "question": "The Atacama Desert, one of the driest places on Earth, is located in which South American country?",
+        "choice1": "Argentina",
+        "choice2": "Chile",
+        "choice3": "Peru",
+        "choice4": "Bolivia",
+        "correctChoice": "Chile",
+        "difficulty": 5
+      },
+      {
+        "question": "What is the capital city of India?",
+        "choice1": "New Delhi",
+        "choice2": "Mumbai",
+        "choice3": "Kolkata",
+        "choice4": "Bangalore",
+        "correctChoice": "New Delhi",
+        "difficulty": 5
+      }
+    ]
+  }
+  
