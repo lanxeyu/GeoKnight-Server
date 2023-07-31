@@ -74,7 +74,7 @@ function resolveAttack(player, enemy) {
 }
 
 
-function checkIfZeroHP(object) {
+function checkZeroHP(object) {
     if (object.currHP <= 0) {
       return true;
     } else {
@@ -89,21 +89,18 @@ function runBattlePhase() {
         // If attack button is pressed, do the following
         resolveAttack();
 
-        if (checkIfZeroHP(player)) {
+        if (checkZeroHP(player)) {
             player = null;
-
             // INSERT HERE: Go to "Losing/Score Display/Enter Your Name" screen
-        }
 
-        if (checkIfZeroHP(enemyArray[0])) {
+
+        } else if (checkZeroHP(enemyArray[0])) {
             // Remove enemy object from the enemyArray
             enemyArray.shift();
 
-            // If there are more enemies
+            // If there are no more enemies
             if (enemyArray.length <= 0) {
-            
-            
-            // INSERT HERE: Successful defense message. Then go to Fixing phase.
+                // INSERT HERE: Successful defense message. Then go to Fixing phase.
             }
         }
     });
