@@ -24,6 +24,24 @@ app.get('/scoreboard', (req,res) => {
 
 })
 
+// gets the score and username of the last player
+app.get('/scoreboard/current-player', (req,res) => {
+    const id = scoreboard.length - 1
+    res.send(scoreboard[id])
+})
+
+// updates the username of the last player
+app.patch('/scoreboard/current-player', (req,res) => {
+    const idx = scoreboard.length - 1;
+    const updateUsername = scoreboard[idx]
+
+    Object.assign(updateUsername, req.body)
+    fs.writeFileSync("scoreboard.json", JSON.stringify(scoreboard));
+
+    res.status(201).json(updateUsername)
+})
+
+
 app.get('/scoreboard/:id', (req,res) => {
     const idx = req.params.id;
     const score = idx - 1
@@ -48,22 +66,6 @@ app.patch('/scoreboard/:id', (req,res) => {
     res.json(updateScore)
 })
 
-// gets the score and username of the last player
-app.get('/scoreboard/current-player', (req,res) => {
-    const id = scoreboard.length - 1
-    res.send(scoreboard[id])
-})
-
-// updates the username of the last player
-app.patch('/scoreboard/current-player', (req,res) => {
-    const idx = scoreboard.length - 1;
-    const updateUsername = scoreboard[idx]
-
-    Object.assign(updateUsername, req.body)
-    fs.writeFileSync("scoreboard.json", JSON.stringify(scoreboard));
-
-    res.status(201).json(updateUsername)
-})
 
 
 
