@@ -1,19 +1,19 @@
 {
     "rewards": [
         {
-            "level": "level1",
+            "category": "easy",
             "maxHP":  0,
             "currHP": 6,
             "attack": 0
         },
         {
-            "level": "level2",
+            "category": "medium",
             "maxHP":  4,
             "currHP": 4,
             "attack": 0
         },
         {
-            "level": "level3",
+            "category": "hard",
             "maxHP":  0,
             "currHP": 0,
             "attack": 3
