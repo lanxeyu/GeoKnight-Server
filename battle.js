@@ -1,6 +1,6 @@
 
 // Initialize difficulty scalers
-let battleCounter = 0;
+let battleCounter = 10;
 let enemyCount = 1;
 
 // Initialize score
@@ -8,8 +8,8 @@ let score = 0;
 
 // Initialize player object
 const player = {
-    maxHP: 10,
-    currHP: 10,
+    maxHP: 1000,
+    currHP: 1000,
     attack: 2,
     name: "player",
     
@@ -18,6 +18,8 @@ const player = {
     }
 };
 
+var enemyAttackMidpoint = 5;
+var enemyMaxHPMidpoint = 10;
 
 // Create empty array to store enemies
 let enemyArray = [];
@@ -79,6 +81,7 @@ function renderEnemy(len){
     // render enemy dmg stat
     enEl.querySelector(".dmgstat").textContent = enemyArray[len].attack;
     // add to body
+    if(len>2){enEl.classList.add("hide")}
     document.body.appendChild(enEl);
 
 }
@@ -91,9 +94,9 @@ function adjustDifficulty() {
 }
 
 
-function getRandomInt(midpoint) {
-    const min = midpoint - 2;
-    const max = midpoint + 2;
+function getRandomInt(midpoint,range) {
+    const min = midpoint - range;
+    const max = midpoint + range;
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -108,17 +111,18 @@ function initBattlePhase() {
     battleCounter += 1;
     // Create enemies dynamically based on difficulty
     for (let i = 0; i < enemyCount; i++) {
-        createEnemy(getRandomInt(enemyMaxHPMidpoint), getRandomInt(enemyAttackMidpoint))
+        createEnemy(getRandomInt(enemyMaxHPMidpoint,2), getRandomInt(enemyAttackMidpoint,2))
     }
 }
 
 
 function resolveAttack(player, enemy) {
     player.currHP -= enemy.attack
-    enemy.currHP -= player.attack
+    playerATK = player.attack + (getRandomInt(player.attack,1))
+    enemy.currHP -= playerATK
 
-    console.log(`GeoKnight dealt ${player.attack} damage to the enemy.`);
-    console.log(`Enemy dealt ${enemyArray[0].attack} damage to the GeoKnight.`);
+    runTypeAnimation(`GeoKnight dealt ${playerATK} damage to the enemy.`);
+    setTimeout(function() {runTypeAnimation(`Enemy dealt ${enemyArray[0].attack} damage to the GeoKnight.`)},1200);
 }
 
 
@@ -130,25 +134,66 @@ function checkZeroHP(object) {
 function renderHP(object){
     let obj = "";
 
-    if(object.id == "en0"){
+    if(String(object.id).includes("en")){
         obj = object.id;
     }else if(object.name == "player"){
         obj = player.name;
     }
-
     const healthbar = document.getElementById(`${obj}`).querySelector(".healthbar");
     const hbWidth = Number(window.getComputedStyle(healthbar).width.substring(0,window.getComputedStyle(healthbar).width.length-2));
-
     // hp lost in relation to healthbar width
     lostHP = ((object.maxHP-object.currHP)/object.maxHP)*hbWidth;
     // styling health lost
     healthbar.style = `box-shadow: inset ${-lostHP}px 0 0 0 black,0px -5px 0 0 rgb(192, 0, 0) inset`;
 }
 
-// destroys html elements of enemy after death
+// destroys HTML elements of enemy after death
 function destroyEnemyElement(){
     const frontArray = enemyArray[0].id;
     document.querySelector(`#${frontArray}`).remove();
+}
+
+// updates HTML and JS id for enemy, so they move forwards
+function updateEnemyID(){
+    for(let i=0;i<enemyArray.length;i++){
+        const enemyEl = document.getElementById(`en${i+1}`);
+        // HTML element
+        enemyEl.id = `en${i}`;
+        if(i<=2){enemyEl.classList.remove("hide")}
+        //JS element
+        enemyArray[i].id = `en${i}`;
+    }
+}
+
+//typewriter animation on textbox
+function runTypeAnimation(text){
+    //grey out ATTACK button
+    const atkBtn = document.getElementById("attack-btn")
+    atkBtn.style.cursor = "not-allowed";
+    atkBtn.style.filter = "opacity(0.7)";
+
+    const textbox = document.querySelector(".fight-container").children[0];
+    const stepVariable = document.documentElement;
+    stepVariable.style.setProperty("--letter-steps",text.length);
+
+    textbox.style.display = "inline-block";
+    textbox.textContent = text;
+    textbox.classList.add("typeW");
+    textbox.addEventListener("animationend", () => {
+        textbox.classList.remove("typeW");
+
+        atkBtn.style.cursor = "pointer";
+        atkBtn.style.filter = "opacity(1)";
+    },5000);
+}
+
+// background animation shake
+function runShakeAnimation(){
+    const bg = document.getElementById("background");
+    bg.classList.add("shake");
+    bg.addEventListener("animationend",() => {
+        bg.classList.remove("shake");
+    })
 }
 
 // function runBattlePhase() {
@@ -163,27 +208,26 @@ document.getElementById("attack-btn").addEventListener("click", () => {
 
     if (checkZeroHP(player)) {
         // player = null;
-        console.log("GeoKnight has died!")
+        setTimeout(function() {runTypeAnimation("GeoKnight has died!")},2000);
         // INSERT HERE: Go to "Lose/Score Display/Enter Your Name" screen
 
 
     } else if (checkZeroHP(enemyArray[0])) {
-        console.log('Enemy has died!')
         // Remove enemy object from the enemyArray
         destroyEnemyElement();
+        runShakeAnimation();
         enemyArray.shift();
-
+        setTimeout(function() {runTypeAnimation("GeoKnight defeated an enemy!")},1200)
+        updateEnemyID();
     }
         // If there are no more enemies
     if (enemyArray.length <= 0) {
         // INSERT HERE: Successful defense message. Then go to Fixing phase.
-        console.log("GeoKnight has defeated the enemies!")
+        setTimeout(function() {runTypeAnimation("GeoKnight has defeated the enemies!")},1200);
     }
     
 });
 // }
 
-var enemyAttackMidpoint = 5;
-var enemyMaxHPMidpoint = 10;
 initBattlePhase();
 // runBattlePhase()
