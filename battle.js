@@ -1,15 +1,16 @@
 
 // Initialize difficulty scalers
-let battleCounter = 10;
+let battleCounter = 6;
 let enemyCount = 1;
 
 // Initialize score
 let score = 0;
 
 // Initialize player object
+const playerElement = document.getElementById("player");
 const player = {
-    maxHP: 1000,
-    currHP: 1000,
+    maxHP: 10,
+    currHP: 10,
     attack: 2,
     name: "player",
     
@@ -48,6 +49,7 @@ function enemyElements(){
     contDiv.className = "char enemy";
 
     const enemySpan = document.createElement("span");
+    enemySpan.textContent = "Enemy";
 
     const hp = document.createElement("div");
     hp.className = "healthbar";
@@ -121,6 +123,8 @@ function resolveAttack(player, enemy) {
     playerATK = player.attack + (getRandomInt(player.attack,1))
     enemy.currHP -= playerATK
 
+    runHitAnimation(playerElement)
+    runHitAnimation(document.getElementById("en0"))
     runTypeAnimation(`GeoKnight dealt ${playerATK} damage to the enemy.`);
     setTimeout(function() {runTypeAnimation(`Enemy dealt ${enemyArray[0].attack} damage to the GeoKnight.`)},1200);
 }
@@ -170,7 +174,7 @@ function runTypeAnimation(text){
     //grey out ATTACK button
     const atkBtn = document.getElementById("attack-btn")
     atkBtn.style.cursor = "not-allowed";
-    atkBtn.style.filter = "opacity(0.7)";
+    atkBtn.style.filter = "brightness(0.6)";
 
     const textbox = document.querySelector(".fight-container").children[0];
     const stepVariable = document.documentElement;
@@ -183,7 +187,7 @@ function runTypeAnimation(text){
         textbox.classList.remove("typeW");
 
         atkBtn.style.cursor = "pointer";
-        atkBtn.style.filter = "opacity(1)";
+        atkBtn.style.filter = "brightness(1)";
     },5000);
 }
 
@@ -193,6 +197,26 @@ function runShakeAnimation(){
     bg.classList.add("shake");
     bg.addEventListener("animationend",() => {
         bg.classList.remove("shake");
+    })
+}
+
+function runHitAnimation(object){
+    const victimEl = document.getElementById(object.id);
+    victimEl.classList.add("hurt");
+    victimEl.addEventListener("animationend",()=>{
+        victimEl.classList.remove("hurt");
+    })
+}
+
+function runDeathAnimation(object){
+    const victimEl = document.getElementById(object.id);
+    victimEl.classList.add("dead");
+    for(let i=0;i<victimEl.children.length;i++){
+        victimEl.children[i].style.display = "none";
+    }
+    victimEl.addEventListener("animationend", ()=>{
+        victimEl.classList.remove("dead");
+        victimEl.style.display = "none";
     })
 }
 
@@ -208,7 +232,8 @@ document.getElementById("attack-btn").addEventListener("click", () => {
 
     if (checkZeroHP(player)) {
         // player = null;
-        setTimeout(function() {runTypeAnimation("GeoKnight has died!")},2000);
+        runDeathAnimation(playerElement)
+        setTimeout(function() {runTypeAnimation("GeoKnight has, uh, fainted! Indefinitely!")},1200);
         // INSERT HERE: Go to "Lose/Score Display/Enter Your Name" screen
 
 
@@ -217,7 +242,7 @@ document.getElementById("attack-btn").addEventListener("click", () => {
         destroyEnemyElement();
         runShakeAnimation();
         enemyArray.shift();
-        setTimeout(function() {runTypeAnimation("GeoKnight defeated an enemy!")},1200)
+        setTimeout(function() {runTypeAnimation("GeoKnight defeated an enemy!")},1200);
         updateEnemyID();
     }
         // If there are no more enemies
