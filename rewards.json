@@ -1,0 +1,35 @@
+{
+    "rewards": [
+        {
+            "level": 1,
+            "maxHP":  0,
+            "currHP": 0,
+            "attack": 0
+        },
+        {
+            "level": 2,
+            "maxHP":  0,
+            "currHP": 0,
+            "attack": 0
+        },
+        {
+            "level": 3,
+            "maxHP":  0,
+            "currHP": 0,
+            "attack": 0
+        },
+        {
+            "level": 4,
+            "maxHP":  0,
+            "currHP": 0,
+            "attack": 0
+        },
+        {
+            "level": 5,
+            "maxHP":  0,
+            "currHP": 0,
+            "attack": 0
+        }
+    ]
+}
+  
