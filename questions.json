@@ -167,11 +167,7 @@
       "choice3": "Kisumu",
       "choice4": "Nakuru",
       "correctChoice": "choice1"
-    }
-  ],
-
-
-  "level2": [
+    },
     {
       "question": "In which country is the Taj Mahal located?",
       "choice1": "India",
@@ -342,8 +338,8 @@
     }
   ],
 
-  
-  "level3": [
+
+  "level2": [
     {
       "question": "What is the deepest lake in the world?",
       "choice1": "Lake Baikal",
@@ -507,7 +503,7 @@
   ],
 
   
-  "level4": [
+  "level3": [
     {
       "question": "Which location is furthest south?",
       "choice1": "Cape Town, South Africa",
@@ -667,11 +663,7 @@
       "choice3": "Santiago, Chile",
       "choice4": "Brasilia, Brazil",
       "correctChoice": "choice3"
-    }
-  ],
-
-  
-  "level5": [
+    },
     {
       "question": "In which country is the city of Ulan Bator located?",
       "choice1": "China",
