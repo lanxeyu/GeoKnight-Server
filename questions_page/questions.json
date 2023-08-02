@@ -1,0 +1,46 @@
+[
+  {
+    "easy": [
+      {
+        "question": "What is the capital city of France?",
+        "choice1": "Berlin",
+        "choice2": "Paris",
+        "choice3": "Rome",
+        "choice4": "Madrid",
+        "correctChoice": "choice2"
+      }, 
+      {
+        "question": "What is the capital city of Australia?",
+        "choice1": "Sydney",
+        "choice2": "Melbourne",
+        "choice3": "Canberra",
+        "choice4": "Perth",
+        "correctChoice": "choice3"
+    }
+    ]
+  },
+  {
+    "medium": [
+      {
+        "question": "What is the capital city of Japan?",
+        "choice1": "Tokyo",
+        "choice2": "Beijing",
+        "choice3": "Seoul",
+        "choice4": "Bangkok",
+        "correctChoice": "choice1"
+      }
+    ]
+  },
+  {
+    "hard": [
+      {
+        "question": "What is the capital city of Brazil?",
+        "choice1": "Rio de Janeiro",
+        "choice2": "São Paulo",
+        "choice3": "Brasília",
+        "choice4": "Buenos Aires",
+        "correctChoice": "choice3"
+      }
+    ]
+  }
+]
