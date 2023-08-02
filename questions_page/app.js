@@ -38,7 +38,6 @@ app.get('/levels/easy/random', (req, res) => {
         const easyQuestions = easyLevel.easy;
         const randIdx = Math.floor(Math.random() * easyQuestions.length);
         let randomQuestion = {... easyQuestions[randIdx]}
-        delete randomQuestion.correctChoice
         res.send(randomQuestion);
     } else {
         res.status(404).send("No questions found for the 'easy' level.");
@@ -60,7 +59,6 @@ app.get('/levels/medium/random', (req, res) => {
         const medQuestion = medLevel.medium;
         const randIdx = Math.floor(Math.random()*medQuestion.length);
         let randomQuestion = {... medQuestion[randIdx]}
-        delete randomQuestion.correctChoice
         res.send(randomQuestion);
     } else {
         res.status(404).send("No questions found for the 'medium' level.");
@@ -82,7 +80,6 @@ app.get('/levels/hard/random', (req, res) => {
         const hardQuestion = hardLevel.hard;
         const randIdx = Math.floor(Math.random()*hardQuestion.length);
         let randomQuestion = {... hardQuestion[randIdx]}
-        delete randomQuestion.correctChoice
         res.send(randomQuestion);
     } else {
         res.status(404).send("No questions found for the 'hard' level.");
