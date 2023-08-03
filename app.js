@@ -1,12 +1,12 @@
 const express = require('express');
 const cors = require('cors')
-const fs = require("fs");
+const fs = require('fs')
 
-const questions = require('./questions')
+const scoreboard = require('./scoreboard');
+const questions = require('./questions.json')
 const logger = require('./logger')
 
 const app = express();
-const scoreboard = require("./scoreboard")
 
 app.use(cors())
 app.use(express.json())
@@ -18,10 +18,6 @@ app.get('/', (req, res) => {
     res.send(questions)
 })
 
-app.get('/player',(req,res) => {
-    const player = questions[0]
-    res.send(player);
-})
 
 app.get('/levels', (req, res) => {
     const categories = questions.map((levelData) => Object.keys(levelData)[0]);
@@ -146,8 +142,6 @@ app.patch('/scoreboard/:id', (req,res) => {
 
     res.json(updateScore)
 })
-
-
 
 
 module.exports = app;
