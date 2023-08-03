@@ -2,11 +2,11 @@ const express = require('express');
 const cors = require('cors')
 const fs = require("fs");
 
-const questions = require('./questions.json')
+const questions = require('./questions')
 const logger = require('./logger')
 
 const app = express();
-const scoreboard = require("./scoreboard.json")
+const scoreboard = require("./scoreboard")
 
 app.use(cors())
 app.use(express.json())
